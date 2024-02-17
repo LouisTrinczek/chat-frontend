@@ -1,3 +1,24 @@
 {
-  "extends": "next/core-web-vitals"
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "standard-with-typescript",
+        "plugin:react/recommended",
+        "next/core-web-vitals",
+        "prettier"
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "project": ["tsconfig.json"]
+    },
+    "ignorePatterns": ["commitlint.config.js", "node_modules/", "dist/"],
+    "plugins": [
+        "react",
+        "prettier"
+    ],
+    "rules": {
+    }
 }
