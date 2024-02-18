@@ -1,0 +1,11 @@
+.avatar {
+    margin-right: 8px;
+    border-radius: 12px;
+    object-fit: cover;
+    
+}
+.avatar:hover {
+    transition: 0.1s;
+    opacity: 70%;
+    cursor: pointer;
+}

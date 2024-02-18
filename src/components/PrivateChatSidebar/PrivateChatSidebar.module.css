@@ -1,0 +1,9 @@
+.sidebar {
+    width: 22%;
+    margin: 8px;
+    padding: 10px;
+    border: 12px;
+    overflow-x: scroll;
+    height: calc(100vh - 16px);
+    background: var(--surface-e);
+}
