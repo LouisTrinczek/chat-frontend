@@ -8,7 +8,7 @@ export default function Home(): ReactElement {
         <div className={"flex"}>
             <ServerListSidebar />
             <PrivateChatSidebar />
-            <ChatPanel />
+            <ChatPanel chatMessages={[]} />
         </div>
     );
 }

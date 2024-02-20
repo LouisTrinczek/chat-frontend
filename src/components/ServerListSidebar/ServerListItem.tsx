@@ -1,15 +1,17 @@
 "use client";
-import { type ReactElement } from "react";
+import React, { type ReactElement } from "react";
 import { IconAvatar } from "@/components/IconAvatar/IconAvatar";
 
 interface ServerListItemProps {
-    onClick?: () => any;
+    onClick: (event: React.MouseEvent<HTMLElement>) => void;
+    serverName: string;
+    avatarUrl: string;
 }
 export function ServerListItem(props: ServerListItemProps): ReactElement {
     return (
         <IconAvatar
-            src={"https://images.unsplash.com/photo-1707822906791-e5a2f06d83d7"}
-            alt={"profile iamge"}
+            src={props.avatarUrl}
+            alt={"Server Image of " + props.serverName}
             onClick={props.onClick}
         />
     );

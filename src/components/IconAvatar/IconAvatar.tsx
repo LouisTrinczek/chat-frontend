@@ -1,5 +1,5 @@
 "use client";
-import { type ReactElement } from "react";
+import React, { type ReactElement } from "react";
 import Image from "next/image";
 import styles from "./IconAvatar.module.css";
 
@@ -9,7 +9,7 @@ interface IconAvatarProps {
     width?: number;
     height?: number;
     className?: string;
-    onClick?: () => any;
+    onClick: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
 export function IconAvatar(props: IconAvatarProps): ReactElement {

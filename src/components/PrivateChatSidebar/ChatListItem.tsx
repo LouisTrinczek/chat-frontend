@@ -2,15 +2,19 @@ import { type ReactElement } from "react";
 import styles from "./ChatListItem.module.css";
 import { IconAvatar } from "@/components/IconAvatar/IconAvatar";
 
-export function ChatListItem(): ReactElement {
+interface ChatListItemProps {
+    avatarUrl: string;
+    username: string;
+    messagePreview: string;
+}
+
+export function ChatListItem(props: ChatListItemProps): ReactElement {
     return (
         <div className={styles.chatListItem}>
             <div>
                 <IconAvatar
-                    src={
-                        "https://images.unsplash.com/photo-1707822906791-e5a2f06d83d7"
-                    }
-                    alt={"profile iamge"}
+                    src={props.avatarUrl}
+                    alt={"Profile Image from " + props.username}
                 />
             </div>
             <div
@@ -19,10 +23,9 @@ export function ChatListItem(): ReactElement {
                     overflow: "hidden",
                 }}
             >
-                <h3 className={"m-0"}>Louis Trinczek</h3>
+                <h3 className={"m-0"}>{props.username}</h3>
                 <span className={styles.chatPreview}>
-                    Some lorem ipsum dolor sit amet very long maybe Sample
-                    text....
+                    {props.messagePreview}
                 </span>
             </div>
         </div>
