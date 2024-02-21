@@ -9,7 +9,7 @@ interface IconAvatarProps {
     width?: number;
     height?: number;
     className?: string;
-    onClick: (event: React.MouseEvent<HTMLElement>) => void;
+    onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
 export function IconAvatar(props: IconAvatarProps): ReactElement {

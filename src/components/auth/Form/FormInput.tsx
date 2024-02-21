@@ -11,7 +11,7 @@ interface FormInputProps {
 }
 export function FormInput(props: FormInputProps) {
     return (
-        <div className={"p-inputgroup flex-1 " + props.className}>
+        <div className={"p-inputgroup flex-1 " + (props.className ?? "")}>
             <span className="p-inputgroup-addon">
                 <i className={PrimeIcons[props.icon]}></i>
             </span>

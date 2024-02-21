@@ -7,6 +7,9 @@ import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-dark-blue/theme.css";
 import "primeicons/primeicons.css";
 import "primeflex/primeflex.min.css";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
+import { generalToastOptions } from "@/config/ReactToastify";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +26,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={inter.className}>
+                <ToastContainer {...generalToastOptions} />
                 <PrimeReactProvider>{children}</PrimeReactProvider>
             </body>
         </html>
