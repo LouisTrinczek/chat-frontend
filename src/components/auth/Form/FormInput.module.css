@@ -1,0 +1,9 @@
+.validationInput {
+    display: flex;
+    flex-direction: column;
+}
+
+.invalidMessage {
+    color: var(--red-300);
+    margin-left: 8px;
+}

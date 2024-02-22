@@ -2,7 +2,7 @@ import { type ReactElement } from "react";
 import styles from "./ChatPanel.module.css";
 import { InputText } from "primereact/inputtext";
 import { ChatMessage } from "@/components/ChatMessage/ChatMessage";
-import { MessageResponseDto } from "@/services";
+import { MessageResponseDto } from "@/services/generated";
 
 interface ChatPanelProps {
     chatMessages: MessageResponseDto[];

@@ -1,4 +1,4 @@
-.registerContainer {
+.loginContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,7 +7,7 @@
 .form {
 }
 .form div {
-   margin: 8px; 
+    margin: 8px;
     width: 100%;
 }
 .form button {
