@@ -5,20 +5,36 @@ import { PrivateChatSidebar } from "@/components/PrivateChatSidebar/PrivateChatS
 import { ChatPanel } from "@/components/ChatPanel/ChatPanel";
 import { api } from "@/services/api";
 import { AuthService } from "@/services/auth/AuthService";
+import { useRouter } from "next/navigation";
+import { ServerResponseDto } from "@/services/generated";
+import { toast } from "react-toastify";
 
 export default function Home(): ReactElement {
-    async function test() {
-        const chatList = await api.users.getApiV1UsersServers(
-            "731ffe15-cdb9-49db-9a87-45123e49ceba"
-        );
-        console.log(chatList);
+    const router = useRouter();
+    const [serverData, setServerData] = React.useState<ServerResponseDto[]>([]);
+
+    if (!AuthService.isLoggedIn()) {
+        router.replace("/auth/login");
     }
-    test();
-    console.log(AuthService.getToken());
+
+    async function fetchUserServers() {
+        try {
+            const serverList = await api.users.getApiV1UsersServers(
+                AuthService.getUserId()
+            );
+            setServerData(serverList.data);
+        } catch (e) {
+            toast.error("Unexpected Error fetching Servers. Try again...");
+        }
+    }
+
+    React.useEffect(() => {
+        fetchUserServers();
+    }, []);
 
     return (
         <div className={"flex"}>
-            <ServerListSidebar />
+            <ServerListSidebar serverData={serverData} />
             <PrivateChatSidebar />
             <ChatPanel chatMessages={[]} />
         </div>

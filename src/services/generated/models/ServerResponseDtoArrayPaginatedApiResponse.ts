@@ -2,9 +2,9 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { MessageResponseDto } from "./MessageResponseDto";
 import type { ResponseStatus } from "./ResponseStatus";
-export type MessageResponseDtoArrayPaginatedApiResponse = {
+import type { ServerResponseDto } from "./ServerResponseDto";
+export type ServerResponseDtoArrayPaginatedApiResponse = {
     status: ResponseStatus;
     totalPages: number;
     currentPage: number;
@@ -12,6 +12,6 @@ export type MessageResponseDtoArrayPaginatedApiResponse = {
     skippedRecords: number;
     recordsToSend: number;
     hasNext: boolean;
-    data?: Array<MessageResponseDto> | null;
+    data?: Array<ServerResponseDto> | null;
     messages: Array<string>;
 };

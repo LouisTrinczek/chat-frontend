@@ -1,6 +1,6 @@
 "use client";
 import styles from "./LoginPage.module.css";
-import { FormInput } from "@/components/auth/Form/FormInput";
+import { FormInput } from "@/components/Form/FormInput";
 import React from "react";
 import { Button } from "primereact/button";
 import { toast } from "react-toastify";
@@ -15,6 +15,7 @@ interface LoginForm {
     emailOrUsername: string;
     password: string;
 }
+
 export default function LoginPage() {
     const router = useRouter();
 

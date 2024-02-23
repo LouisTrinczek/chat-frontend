@@ -1,5 +1,6 @@
 /* generated using openapi-typescript-codegen -- do no edit */
 /* istanbul ignore file */
+/* tslint:disable */
 /* eslint-disable */
 export { ChatApiClient } from "./ChatApiClient";
 
@@ -28,6 +29,7 @@ export type { ServerChannelUpdateDto } from "./models/ServerChannelUpdateDto";
 export type { ServerCreationDto } from "./models/ServerCreationDto";
 export type { ServerResponseDto } from "./models/ServerResponseDto";
 export type { ServerResponseDtoApiResponse } from "./models/ServerResponseDtoApiResponse";
+export type { ServerResponseDtoArrayPaginatedApiResponse } from "./models/ServerResponseDtoArrayPaginatedApiResponse";
 export type { ServerUpdateDto } from "./models/ServerUpdateDto";
 export type { StringApiResponse } from "./models/StringApiResponse";
 export type { UserLoginDto } from "./models/UserLoginDto";

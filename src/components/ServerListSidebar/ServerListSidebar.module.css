@@ -8,3 +8,10 @@
     flex-direction: column;
     align-items: center;
 }
+
+.createButton {
+    width: 64px;
+    height: 64px;
+    padding: 0;
+
+}

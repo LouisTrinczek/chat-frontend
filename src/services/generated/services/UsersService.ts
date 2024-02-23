@@ -1,8 +1,9 @@
 /* generated using openapi-typescript-codegen -- do no edit */
 /* istanbul ignore file */
+/* tslint:disable */
 /* eslint-disable */
-import type { MessageResponseDtoArrayPaginatedApiResponse } from "../models/MessageResponseDtoArrayPaginatedApiResponse";
 import type { ObjectApiResponse } from "../models/ObjectApiResponse";
+import type { ServerResponseDtoArrayPaginatedApiResponse } from "../models/ServerResponseDtoArrayPaginatedApiResponse";
 import type { StringApiResponse } from "../models/StringApiResponse";
 import type { UserLoginDto } from "../models/UserLoginDto";
 import type { UserRegistrationDto } from "../models/UserRegistrationDto";
@@ -124,12 +125,12 @@ export class UsersService {
     /**
      * Gets all Servers a User is a member of
      * @param userId
-     * @returns MessageResponseDtoArrayPaginatedApiResponse Successfully get servers
+     * @returns ServerResponseDtoArrayPaginatedApiResponse Successfully get servers
      * @throws ApiError
      */
     public getApiV1UsersServers(
         userId: string
-    ): CancelablePromise<MessageResponseDtoArrayPaginatedApiResponse> {
+    ): CancelablePromise<ServerResponseDtoArrayPaginatedApiResponse> {
         return this.httpRequest.request({
             method: "GET",
             url: "/api/v1/users/{userId}/servers",

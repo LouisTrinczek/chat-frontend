@@ -1,6 +1,6 @@
 "use client";
 import styles from "./RegisterPage.module.css";
-import { FormInput } from "@/components/auth/Form/FormInput";
+import { FormInput } from "@/components/Form/FormInput";
 import React from "react";
 import { Button } from "primereact/button";
 import { toast } from "react-toastify";
