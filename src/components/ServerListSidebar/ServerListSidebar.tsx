@@ -7,16 +7,13 @@ import { ServerCreationDialog } from "@/components/ServerListSidebar/ServerCreat
 import { Button } from "primereact/button";
 import { api } from "@/services/api";
 import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
+import { AuthService } from "@/services/auth/AuthService";
 
-interface ServerListSidebarProps {
-    serverData: ServerResponseDto[];
-}
-
-export function ServerListSidebar(props: ServerListSidebarProps): ReactElement {
+export function ServerListSidebar(): ReactElement {
+    const router = useRouter();
     const [dialogVisible, setDialogVisible] = React.useState(false);
-    const [serverData, setServerData] = React.useState<ServerResponseDto[]>(
-        props.serverData
-    );
+    const [serverData, setServerData] = React.useState<ServerResponseDto[]>([]);
 
     const createServer = async (serverCreationDto: ServerCreationDto) => {
         try {
@@ -30,9 +27,20 @@ export function ServerListSidebar(props: ServerListSidebarProps): ReactElement {
         }
     };
 
+    async function fetchUserServers() {
+        try {
+            const serverList = await api.users.getApiV1UsersServers(
+                AuthService.getUserId()
+            );
+            setServerData(serverList.data ?? []);
+        } catch (e) {
+            toast.error("Unexpected Error fetching Servers. Try again...");
+        }
+    }
+
     React.useEffect(() => {
-        setServerData(props.serverData);
-    }, [props.serverData]);
+        fetchUserServers();
+    }, []);
 
     return (
         <>
@@ -43,7 +51,7 @@ export function ServerListSidebar(props: ServerListSidebarProps): ReactElement {
                         serverName={server.name}
                         iconUrl={server.iconUrl ?? ""}
                         onClick={() => {
-                            console.log("Hello");
+                            router.push(`/chat/server/${server.id}`);
                         }}
                     />
                 ))}
